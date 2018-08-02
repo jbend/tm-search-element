@@ -3,7 +3,8 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { SearchService } from './search.service';
-import { Trace } from './models';
+import { Trace, Order } from './models';
+import { take, map, switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -13,16 +14,20 @@ import { Trace } from './models';
   encapsulation: ViewEncapsulation.Native
 })
 export class AppComponent {
-  @Input() name = 'friend';
+  @Input() traceType = '';
   focus: string;
   focusSet = false;
 
-  searchResults$: Observable<Trace[]>;
+  order$: Observable<Order>;
 
   constructor(private searchService: SearchService) { }
 
   search(value) {
-    this.searchResults$ = this.searchService.traceNumberSearch(value);
+    this.order$ = this.searchService.traceNumberSearch(value).pipe(
+      map(res => res[0].orderId),
+      switchMap(res => this.searchService.fetchOrder(res))
+    );
+
     this.focusSet = true;
   }
 
@@ -30,4 +35,5 @@ export class AppComponent {
     this.focus = value;
     this.focusSet = true;
   }
+
 }
