@@ -7,7 +7,9 @@ import { catchError, map } from 'rxjs/operators';
 import { Order, OrderDetail, OrderStatus, OrderTrace } from './models';
 import { Trace } from './models';
 
-const baseUrl = 'http://localhost:8095/s/';
+import * as ENV from '../environments/environment';
+
+const baseUrl = ENV.SEARCH_ENDPOINT;
 
 @Injectable({
   providedIn: 'root'

@@ -1,31 +1,47 @@
+![in.sight logo](/insight.png)
+
 # TmSearchElement
 
-![in.sight logo](/insight.png)
+The tm-search-element is a [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) built using [Angular Elements](https://angular.io/guide/elements)
+
+This class was a first of it's kind for in.sight, we hope you liked it. Be sure to rate the course in the mobile app and provide feedback.
+
+## Quick Start
+
+* Clone the repo
+* npm install (yarn)
+* Update the environments.ts and environments.prod.ts for your art server endpoints
+* Build the javascript bundle
+  * npm run build:elements
+* Copy the js bundle to your target web site
+* In you html file:
+  * Link to the js bundle
+  * Add the custom element to your html 
+  * see /elements/index.html for example
+
+## Material covered in the session
+
+### Technology
+
+* [Angular](https://angular.io/)
+* [Angular Elements](https://angular.io/guide/elements)
+* [Typescript](https://www.typescriptlang.org/)
+* [Node.js](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/) / [Yarn](https://yarnpkg.com/en/)
+
+### Tooling
+
+* [GIT](https://git-scm.com/)
+* [VSCode](https://code.visualstudio.com/)
+* [PostMan](https://www.getpostman.com/)
+
+### TruckMate
+
+Freight Search API
+
+## Origin
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
 This project is based on [Getting Started with Angular Elements](https://www.telerik.com/blogs/getting-started-with-angular-elements) by Telerik
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

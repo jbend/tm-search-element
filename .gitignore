@@ -33,6 +33,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+elements/tm-search-element.js
 
 # System Files
 .DS_Store
