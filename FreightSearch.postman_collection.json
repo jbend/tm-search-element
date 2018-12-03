@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "da946bd8-c907-4423-93c6-7e1815f29f87",
+		"name": "FreightSearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Swagger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "977a7ad0-fbc6-469c-ac7c-0f3ebcdbb761",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/swagger.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"swagger.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Version",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0064f5d9-a7ff-456e-a488-f8584d70ee59",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/version",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by trace number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5b01c43-9c18-48b2-892d-0d247aa48549",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/search?traceNumber=PRO1234",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "traceNumber",
+							"value": "PRO1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for trace number by trace type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "61cb691a-63bd-45b6-8fd7-c8966716e06d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/search?traceNumber=PRO1234&traceType=I",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "traceNumber",
+							"value": "PRO1234"
+						},
+						{
+							"key": "traceType",
+							"value": "I"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6a443fd-e325-4f73-afc9-5088d347877e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"orderID = 43\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.orderId).to.eql(43);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/orders/43",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orders",
+						"43"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17c27f13-30ef-4ddb-b656-1671ee60cb3e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/orders/43/details",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orders",
+						"43",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order trace numbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f37692c-927d-4cbf-8de3-c6f01c3782ae",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/orders/43/trace",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orders",
+						"43",
+						"trace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order with expanded children",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83c45746-7a30-4f5e-8e7a-fc6d82d6f70e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"orderID = 43\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.orderId).to.eql(43);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/orders/43?expand=details,trace,status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orders",
+						"43"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "details,trace,status"
+						}
+					]
+				},
+				"description": "Get order with expanded detils, trace numbers and status history"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "82612750-c21a-423c-a83e-39f9648f6b83",
+			"key": "url",
+			"value": "localhost:8084/s",
+			"type": "string"
+		}
+	]
+}
